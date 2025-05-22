@@ -1,6 +1,6 @@
 @extends('layouts.parts')
 
-@section('assets', '/Public/Themes/<themeName>/Assets/')
+@section('assets', '/Public/Themes/speedyvisualsTheme/Assets/')
 
 @section('content')
     {!! $content !!}

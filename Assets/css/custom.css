@@ -1,0 +1,18 @@
+body {
+    color: var(--shadow2);
+    background-color: var(--highlight3);
+}
+.card {
+    background: var(--highlight1);
+}
+.form-control {
+    background: var(--highlight2);
+    color: var(--shadow2);
+}
+.form-control:focus {
+    color: var(--shadow2);
+    background-color: var(--highlight1);
+    border-color: #f5d98b;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgb(235 179 22 / 25%);
+}
