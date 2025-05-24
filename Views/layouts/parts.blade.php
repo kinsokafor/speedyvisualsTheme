@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HairCut - Hair Salon HTML Template</title>
+    <title></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -49,15 +49,17 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="mb-0 text-primary text-uppercase"><i class="fa fa-cut me-3"></i>HairCut</h1>
+        <a href="{{\EvoPhp\Api\Operations::getIndex()}}" class="navbar-brand ms-4 ms-lg-0">
+            <!-- <h1 class="mb-0 text-primary text-uppercase"><i class="fa fa-cut me-3"></i>HairCut</h1> -->
+            <!-- <img src="@yield('assets')img/logo.png" alt="" class="logo logo-0"> -->
+            <img src="@yield('assets')img/logo1.png" alt="" class="logo logo-1">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="{{\EvoPhp\Api\Operations::getIndex()}}" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link active">About</a>
                 <a href="service.html" class="nav-item nav-link">Service</a>
                 <div class="nav-item dropdown">
@@ -81,12 +83,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5">
-            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">About</h1>
+            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown evo-title"></h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="{{\EvoPhp\Api\Operations::getIndex()}}">Dashboard</a></li>
+                    <li class="breadcrumb-item text-primary active evo-title" aria-current="page"></li>
                 </ol>
             </nav>
         </div>
@@ -155,11 +156,10 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="{{$main_website}}">{{$site_name}}</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        Powered By <a class="border-bottom" href="#">Our company limited</a>
                     </div>
                 </div>
             </div>
