@@ -24,6 +24,9 @@ body {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(235 179 22 / 25%);
 }
+.form-control:disabled, .form-control:read-only {
+    background-color: var(--highlight1);
+}
 .bg-secondary {
   background-color: var(--highlight3) !important;
 }
@@ -41,6 +44,7 @@ img.logo {
   background: var(--color1) !important;
   color: var(--shadow1) !important;
 }
+
 
 /* layout container */
 .speedy-layout-container {
