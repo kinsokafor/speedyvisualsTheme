@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Patrick+Hand&display=swap');
 
 :root {
   --font-harry: "Henny Penny", system-ui;
   --font-weight-harry: 400;
   --font-style-harry: normal;
+  --font-fancy: "Patrick Hand", cursive;
 }
 
 body {
@@ -24,8 +25,9 @@ body {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(235 179 22 / 25%);
 }
-.form-control:disabled, .form-control:read-only {
-    background-color: var(--highlight1);
+.form-control:disabled,
+.form-control:read-only {
+  background-color: var(--highlight1);
 }
 .bg-secondary {
   background-color: var(--highlight3) !important;
@@ -44,7 +46,6 @@ img.logo {
   background: var(--color1) !important;
   color: var(--shadow1) !important;
 }
-
 
 /* layout container */
 .speedy-layout-container {
@@ -122,12 +123,15 @@ img.logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: var(--font-fancy);
+  font-weight: 400;
   flex: 3;
   background-image: url("../img/sketch1-trans.png");
   background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .speedy-layout-container .right-section .page-label {
@@ -144,57 +148,61 @@ img.logo {
   position: relative;
   top: -20px;
   z-index: 1;
-  /* height: 95%;
-  overflow-y: scroll; */
+  max-height: 74%;
 }
 
 .speedy-layout-container .right-section .form-control {
   border: none;
   background-color: transparent;
-  background-image: url("../img/top-left.png"), url("../img/top-right.png"),
-    url("../img/bottom-left.png"), url("../img/bottom-right.png"),
+  background-image: url("../img/bottom-left.png"), url("../img/bottom-right.png"),
     url("../img/chalkboard.jpg");
-  background-position: top left, top right, bottom left, bottom right,
+  background-position: bottom left, bottom right,
     center center;
   background-size: 180px auto;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-repeat: no-repeat, no-repeat, repeat;
   padding: 20px;
 }
 
 .speedy-layout-container .right-section .form-control:focus {
   box-shadow: 0 0 5px 0.25rem rgb(255 255 255 / 25%);
+  background-image: url("../img/chalkboard.jpg");
+  background-position: center center;
+  background-size: 180px auto;
+  background-repeat: repeat;
 }
 
 .speedy-layout-container .right-section label {
-  display: block;
-  text-align: center;
-  font-size: 1.6rem;
-  color: var(--shadow3);
-  /* opacity: 0.8; */
-  position: relative;
-  top: 15px;
-  transform: rotate(356deg);
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--shadow1);
+    opacity: 0.8;
+    position: relative;
+    top: 15px;
+    /* transform: rotate(356deg); */
 }
 
 /* buttons */
-.speedy-layout-container .right-section .btn {
-    position: relative;
-    padding: 12px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--shadow1);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    width: 100%;
-    transform: rotate(356deg);
-    margin-top: 20px;
+.speedy-layout-container .right-section .btn,
+.fancy-btn.btn {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--shadow1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: 100%;
+  transform: rotate(356deg);
+  margin-top: 20px;
 }
 
-.speedy-layout-container .right-section .btn::before {
+.speedy-layout-container .right-section .btn::before,
+.fancy-btn.btn::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -208,73 +216,89 @@ img.logo {
   transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.speedy-layout-container .right-section .btn:hover {
+.speedy-layout-container .right-section .btn:hover,
+.fancy-btn.btn:hover {
   color: var(--color2);
   background-color: transparent;
   border-color: none;
 }
 
-.speedy-layout-container .right-section .btn:hover::before {
+.speedy-layout-container .right-section .btn:hover::before,
+.fancy-btn.btn:hover::before {
   filter: brightness(1.4);
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.speedy-layout-container .right-section .btn:active {
+.speedy-layout-container .right-section .btn:active,
+.fancy-btn.btn:active {
   border-radius: 4px;
 }
 
 .speedy-layout-container .right-section .btn-check:focus + .btn-primary,
-.speedy-layout-container .right-section .btn-primary:focus {
+.speedy-layout-container .right-section .btn-primary:focus,
+.fancy-btn.btn-primary:focus {
   background-color: transparent;
   border-color: none;
   box-shadow: none;
 }
 
-.speedy-layout-container .right-section .btn:active::before {
+.speedy-layout-container .right-section .btn:active::before,
+.fancy-btn.btn:active::before {
   filter: brightness(0.6);
   transform: translate(-50%, -50%) scale(0.98);
 }
 
 /* --- .btn-back Mode --- */
-    .speedy-layout-container .right-section .btn.btn-back::before {
-      background-image: url('../img/back-bg.png');
-      left: 50%;
-      transition: all 0.2s ease;
-    }
+.speedy-layout-container .right-section .btn.btn-back::before,
+.fancy-btn.btn.btn-back::before {
+  background-image: url("../img/back-bg.png");
+  left: 50%;
+  transition: all 0.2s ease;
+}
 
-    .speedy-layout-container .right-section .btn.btn-back {
-      color: transparent;
-      transition: color 0.3s ease;
-    }
+.speedy-layout-container .right-section .btn.btn-back,
+.fancy-btn.btn.btn-back {
+  color: transparent;
+  transition: color 0.3s ease;
+}
 
-    .speedy-layout-container .right-section .btn.btn-back:hover::before {
-      left: 20%;
-    }
+.speedy-layout-container .right-section .btn.btn-back:hover::before,
+.fancy-btn.btn.btn-back:hover::before {
+  left: 20%;
+}
 
-    .speedy-layout-container .right-section .btn.btn-back:hover {
-      color: var(--color2);
-    }
+.speedy-layout-container .right-section .btn.btn-back:hover,
+.fancy-btn.btn.btn-back:hover {
+  color: var(--color2);
+}
 
-    /* --- .btn-next Mode --- */
-    .speedy-layout-container .right-section .btn.btn-next {
-      color: transparent;
-      transition: color 0.3s ease;
-    }
+/* --- .btn-next Mode --- */
+.speedy-layout-container .right-section .btn.btn-next,
+.fancy-btn.btn.btn-next {
+  color: transparent;
+  transition: color 0.3s ease;
+}
 
-    .speedy-layout-container .right-section .btn.btn-next::before {
-      background-image: url('../img/next-bg.png');
-      left: 50%;
-      transition: all 0.2s ease;
-    }
+.speedy-layout-container .right-section .btn.btn-next::before,
+.fancy-btn.btn.btn-next::before {
+  background-image: url("../img/next-bg.png");
+  left: 50%;
+  transition: all 0.2s ease;
+}
 
-    .speedy-layout-container .right-section .btn.btn-next:hover {
-      color: var(--color2);
-    }
+.speedy-layout-container .right-section .btn.btn-next:hover,
+.fancy-btn.btn.btn-next:hover {
+  color: var(--color2);
+}
 
-    .speedy-layout-container .right-section .btn.btn-next:hover::before {
-      left: 80%;
-    }
+.speedy-layout-container .right-section .btn.btn-next:hover::before,
+.fancy-btn.btn.btn-next:hover::before {
+  left: 80%;
+}
 /* buttons end */
+body.modal-open {
+  overflow: hidden;
+}
 /* layout container ends */
 
 /* Extra small devices (phones, 600px and down) */
@@ -349,7 +373,7 @@ img.logo {
   }
 
   .speedy-layout-container .right-section label {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 }
 
