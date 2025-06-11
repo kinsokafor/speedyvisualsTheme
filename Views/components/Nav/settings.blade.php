@@ -4,9 +4,11 @@
         @if(\EvoPhp\Api\Operations::checkAccess("1"))
         <a href="#/admin/options" class="dropdown-item">System Settings</a>
         @endif
+        @if(\EvoPhp\Api\Operations::checkAccess("1,2"))
         <a href="#/configuration" class="dropdown-item">Configuration</a>
-        <a href="open.html" class="dropdown-item">Working Hours</a>
+        @endif
+        <!-- <a href="open.html" class="dropdown-item">Working Hours</a>
         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-        <a href="404.html" class="dropdown-item">404 Page</a>
+        <a href="404.html" class="dropdown-item">404 Page</a> -->
     </div>
 </div>

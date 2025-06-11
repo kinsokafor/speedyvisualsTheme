@@ -46,7 +46,6 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="{{\EvoPhp\Api\Operations::getIndex()}}" class="navbar-brand ms-4 ms-lg-0">
@@ -115,7 +114,7 @@
                         &copy; <a class="border-bottom" href="{{$main_website}}">{{$site_name}}</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Powered By <a class="border-bottom" href="#">Our company limited</a>
+                        Powered By <a class="border-bottom" href="#">{{$site_name}}</a>
                     </div>
                 </div>
             </div>

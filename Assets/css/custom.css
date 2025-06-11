@@ -5,11 +5,18 @@
   --font-weight-harry: 400;
   --font-style-harry: normal;
   --font-fancy: "Patrick Hand", cursive;
+  --padding-lr-sm: 25px;
+  --padding-tb-sm: 40px;
+  --padding-lr: 30px;
+  --padding-tb: 43px;
 }
 
 body {
   color: var(--shadow2);
   background-color: var(--highlight3);
+}
+section.section-wrap {
+    padding: 40px 0;
 }
 .card {
   background: var(--highlight1);
@@ -28,6 +35,21 @@ body {
 .form-control:disabled,
 .form-control:read-only {
   background-color: var(--highlight1);
+}
+.flex-radio {
+    display: inline-flex;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--highlight1);
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.filepond--root, .filepond--drop-label, .filepond--panel-root {
+  background-color: var(--highlight1); /* Replace with your desired color */
+  border-radius: 8px; /* Optional: rounded corners */
+  padding: 10px; /* Optional: inner spacing */
 }
 .bg-secondary {
   background-color: var(--highlight3) !important;
@@ -58,7 +80,7 @@ img.logo {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100000;
+  z-index: 1000;
 }
 
 .speedy-layout-container .left-section {
@@ -123,7 +145,7 @@ img.logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-fancy);
+  /* font-family: var(--font-fancy); */
   font-weight: 400;
   flex: 3;
   background-image: url("../img/sketch1-trans.png");
@@ -143,12 +165,13 @@ img.logo {
 }
 
 .speedy-layout-container .right-section .inner-right {
-  width: 95%;
-  max-width: 450px;
-  position: relative;
-  top: -20px;
-  z-index: 1;
-  max-height: 74%;
+    width: 95%;
+    max-width: 450px;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    max-height: 74%;
+    margin-bottom: 20px;
 }
 
 .speedy-layout-container .right-section .form-control {
@@ -172,14 +195,15 @@ img.logo {
 }
 
 .speedy-layout-container .right-section label {
-    display: block;
+    /* display: block; */
     text-align: center;
     font-size: 1.2rem;
     color: var(--shadow1);
     opacity: 0.8;
     position: relative;
-    top: 15px;
+    top: 7px;
     /* transform: rotate(356deg); */
+    font-family: var(--font-fancy);
 }
 
 /* buttons */
@@ -301,6 +325,23 @@ body.modal-open {
 }
 /* layout container ends */
 
+/* icon card */
+.icon-card {
+    background-color: var(--highlight1);
+    padding: var(--padding-tb-sm) var(--padding-lr-sm);
+    border-radius: 20px 76px 20px 20px;
+}
+
+.icon-card p {
+  font-size: 0.8rem;
+}
+
+.icon-card img {
+    width: 67px;
+    padding-bottom: var(--padding-lr-sm);
+}
+/* icon card ends */
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 }
@@ -374,6 +415,10 @@ body.modal-open {
 
   .speedy-layout-container .right-section label {
     font-size: 1.4rem;
+  }
+
+  .icon-card {
+    padding: var(--padding-tb) var(--padding-lr);
   }
 }
 
